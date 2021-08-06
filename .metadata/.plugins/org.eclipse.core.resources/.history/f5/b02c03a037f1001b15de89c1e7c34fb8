@@ -1,0 +1,36 @@
+package reactorex01;
+
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+//<T> 구독할 데이터의 타입
+public class MySubscriber implements Subscriber<Integer>{
+
+	private Integer size=1;
+	
+	public void onSubscribe(Subscription s) {
+		System.out.println("2.구독 응답 완료"); //구독이 되었다는 것이다.
+		//subscriver가 구독을 응답 완료한다. 자동으로 때려줌
+		
+		//신문줘!!
+		s.request(size); //내가 하루에 읽은 수 있는 글자수에 한계가 있다.(내가 소화할 수 있는 양만큼 요청) - 백프레셔(BackPressor)
+		System.out.println("3. 신문 하루에"+size+"만큼 줘");
+		
+	}
+
+	public void onNext(Integer t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onError(Throwable t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onComplete() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

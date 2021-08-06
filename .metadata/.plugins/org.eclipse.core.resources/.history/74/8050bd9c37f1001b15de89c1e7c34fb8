@@ -1,0 +1,27 @@
+package reactorex01;
+
+import org.reactivestreams.Subscription;
+
+// 구독 정보
+public class MySubScription implements Subscription {
+	
+	private final MySubscriber subscriber;
+	
+	public MySubScription(MySubscriber s) {
+		System.out.println("구독정보 생성 완료!");
+		this.subscriber = s;
+	}
+
+	public void request(long n) {
+		System.out.println("4.구독자가 하루에 신문"+n+"개씩 받는다네??");
+		// N개씩 구독자에게 돌려주는 로직이 필요하다.
+		subscriber.onNext(1); //숫자를 임의로 1이라고 하고 구독자에게 돌려준다. key의 타입은 Integer
+		
+	}
+
+	public void cancel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

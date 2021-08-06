@@ -1,0 +1,29 @@
+package reactorex01;
+
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+//<T> 구독할 데이터의 타입
+public class MySubscriber implements Subscriber<Integer>{
+
+	public void onSubscribe(Subscription s) {
+		System.out.println("2.구독 응답 완료"); //구독이 되었다는 것이다.
+		//subscriver가 구독을 응답 완료한다. 자동으로 때려줌
+	}
+
+	public void onNext(Integer t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onError(Throwable t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onComplete() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

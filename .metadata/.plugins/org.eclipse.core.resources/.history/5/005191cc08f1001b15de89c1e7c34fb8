@@ -1,0 +1,19 @@
+package reactorex01;
+
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+// <T> 발행할 데이터의 타입
+public class MyPublisher implements Publisher<Integer> {//일단 숫자를 Publisher하겠다.(영상을 Publisher하겠다고 하면 Object)
+
+	//구독
+	public void subscribe(Subscriber<? super Integer> s) {	//Publisher의 책임 = 구독(함수)
+		System.out.println("1.구독시작 처리중... for SubScription을 만들기 위해");
+		s.onSubscribe(new MySubScription());
+	}	
+	
+	// reactive한 프로그램을 어떻게 짜는 지에 대해서는 원래 회사마다 쓰는 방식이 달랐다 = > 지금은 표준을 만들었다.
+
+	//이 함수는 누가 호출을 해야하나? => 구독자가 호출을 해야한다.
+}

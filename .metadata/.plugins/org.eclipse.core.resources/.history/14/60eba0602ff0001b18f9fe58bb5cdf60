@@ -1,0 +1,16 @@
+package reactorex01;
+
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+
+public class MyPublisher implements Publisher<Integer> {//일단 숫자를 Publisher하겠다.(영상을 Publisher하겠다고 하면 Object)
+
+
+	//구독
+	public void subscribe(Subscriber<? super Integer> s) {	//Publisher의 책임 = 구독(함수)
+		System.out.println("1.구독시작");
+	}	
+	
+
+	//이 함수는 누가 호출을 해야하나? => 구독자가 호출을 해야한다.
+}
